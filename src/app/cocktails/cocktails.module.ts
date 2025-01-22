@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ByCocktailPageComponent } from './pages/by-cocktail-page/by-cocktail-page.component';
-import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
-import { CountryPageComponent } from './pages/country-page/country-page.component';
-import { CountriesRoutingModule } from './cocktails-routing.module';
+import { CocktailPageComponent } from './pages/cocktail-page/cocktail-page.component';
+import { CocktailsRoutingModule } from './cocktails-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { CocktailTableComponent } from './components/cocktail-table/cocktail-table.component';
 import { TableModule } from 'primeng/table';
@@ -13,27 +12,36 @@ import { Dialog } from 'primeng/dialog';
 import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { ByFirstLetterPageComponent } from './pages/by-first-letter-page/by-first-letter-page.component';
-
-
+import { DialogIngredientsComponent } from '../shared/components/dialog-ingredients/dialog-ingredients.component';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { SelectModule } from 'primeng/select';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     ByFirstLetterPageComponent,
     ByCocktailPageComponent,
-    ByRegionPageComponent,
-    CountryPageComponent,
-    CocktailTableComponent
+    CocktailPageComponent,
+    CocktailTableComponent,
   ],
   imports: [
     CommonModule,
-    CountriesRoutingModule,
+    CocktailsRoutingModule,
     SharedModule,
     TableModule,
     ButtonModule,
     InputTextModule,
     Dialog,
     CarouselModule,
-    TagModule
-  ]
+    TagModule,
+    IconFieldModule,
+    InputIconModule,
+    MultiSelectModule,
+    SelectModule,
+    RouterModule,
+  ],
+  exports: [CocktailsRoutingModule],
 })
-export class CountriesModule { }
+export class CocktailsModule {}

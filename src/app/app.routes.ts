@@ -2,18 +2,15 @@
 import { Routes } from '@angular/router';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: HomePageComponent
-  // },
   {
     path: 'cocktails',
-    loadChildren: () => import('./cocktails/cocktails.module').then(m => m.CountriesModule)
+    loadChildren: () =>
+      import('./cocktails/cocktails.module').then((m) => m.CocktailsModule),
   },
   {
     path: '**',
-    redirectTo: 'cocktails'
-  }
+    redirectTo: 'cocktails/by-first-letter',
+  },
 ];
 
 export { routes };

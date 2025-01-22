@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '@angular/common';
-import { CountriesModule } from './cocktails/cocktails.module';
+import { CocktailsModule } from './cocktails/cocktails.module';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ import { CountriesModule } from './cocktails/cocktails.module';
     RouterOutlet,
     ButtonModule,
     SharedModule,
-    CountriesModule
+    CocktailsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

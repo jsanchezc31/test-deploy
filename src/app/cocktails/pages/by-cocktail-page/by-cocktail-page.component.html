@@ -2,17 +2,17 @@
 
 <div class="row">
   <shared-search-box
-    (onValue)="searchByCapital($event)"
+    (onValue)="searchCocktailByName($event)"
     [initialValue]="initialValue"
-    placeholder="Buscar por capital"
+    placeholder="Buscar por nombre del cocktail"
+    [allowOnlyOneCharacter]="false"
   >
   </shared-search-box>
 </div>
 <hr />
 <div class="row">
   <div class="col">
-    <hr />
     <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
-    <cocktails-table [countries]="countries"></cocktails-table>
+    <cocktails-table [cocktails]="cocktails"></cocktails-table>
   </div>
 </div>

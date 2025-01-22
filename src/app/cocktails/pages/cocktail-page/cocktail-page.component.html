@@ -1,0 +1,55 @@
+<ng-template #loading>
+  <div class="alert" alert-info>Espere por favor...</div>
+</ng-template>
+
+<div *ngIf="cocktail; else loading">
+  <div class="row">
+    <div class="col-12">
+      <h2>
+        Cocktail: <strong>{{ cocktail.strDrink }}</strong>
+      </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <img
+        [src]="cocktail.strDrinkThumb"
+        [alt]="cocktail.strDrink"
+        class="img-fluid"
+        style="width: 30rem; border-radius: 10px"
+      />
+    </div>
+    <div class="col-6">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong class="mt-2">Ingredientes:</strong>
+          <ul>
+            <li *ngFor="let item of ingredientsWithMeasures">
+              {{ item.ingredient }}: {{ item.measure }}
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <strong class="ml-2 mt-2">Preparación:</strong>
+          </div>
+          <button
+            *ngFor="let lang of languages"
+            class="btn mx-1"
+            [class.active]="lang.code === selectedLanguage"
+            (click)="changeLanguage(lang.code)"
+          >
+            <img [src]="lang.img" style="width: 20px" />
+          </button>
+          <p class="mt-2">{{ instructions }}</p>
+        </li>
+        <li class="list-group-item">
+          <strong class="ml-2 mt-2">Categoría:</strong>
+          <p>{{ cocktail.strCategory }}</p>
+          <app-carousel [cocktails]="relatedCocktails"></app-carousel>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

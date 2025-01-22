@@ -1,8 +1,23 @@
-<input
-  type="text"
-  class="form-control"
-  [value]="initialValue"
-  [placeholder]="placeholder"
-  (keyup.enter)="emitValue(txtInput.value)"
-  #txtInput
-/>
+<div class="d-flex gap-3">
+  <input
+    type="text"
+    class="form-control"
+    style="width: 16rem"
+    [value]="initialValue"
+    [placeholder]="placeholder"
+    (input)="
+      allowOnlyOneCharacter
+        ? (txtInput.value = txtInput.value.slice(0, 1))
+        : null
+    "
+    (keyup.enter)="emitValue(txtInput.value)"
+    #txtInput
+  />
+  <button
+    class="btn btn-primary"
+    type="button"
+    (click)="emitValue(txtInput.value)"
+  >
+    Buscar
+  </button>
+</div>

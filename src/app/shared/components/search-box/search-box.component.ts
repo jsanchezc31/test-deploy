@@ -13,12 +13,19 @@ export class SearchBoxComponent{
   public initialValue: string = '';
 
   @Input()
+  public allowOnlyOneCharacter: boolean = false; // Nueva propiedad
+
+  @Input()
   public placeholder!: string;
 
   @Output()
   public onValue = new EventEmitter<string>();
 
   emitValue(value: string): void {
+    // Si se permite solo un carácter, recorta el valor a 1 carácter
+    if (this.allowOnlyOneCharacter) {
+      value = value.slice(0, 1);
+    }
     this.onValue.emit(value);
   }
 }

@@ -2,42 +2,31 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ByCocktailPageComponent } from './pages/by-cocktail-page/by-cocktail-page.component';
-import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
-import { CountryPageComponent } from './pages/country-page/country-page.component';
+import { CocktailPageComponent } from './pages/cocktail-page/cocktail-page.component';
 import { ByFirstLetterPageComponent } from './pages/by-first-letter-page/by-first-letter-page.component';
 
 const routes: Routes = [
   {
     path: 'by-first-letter',
-    component: ByFirstLetterPageComponent
+    component: ByFirstLetterPageComponent,
   },
   {
     path: 'by-cocktail',
-    component: ByCocktailPageComponent
-  },
-  {
-    path: 'by-region',
-    component: ByRegionPageComponent
+    component: ByCocktailPageComponent,
   },
   {
     path: 'by/:id',
-    component: CountryPageComponent
+    component: CocktailPageComponent,
   },
   {
     path: '**',
-    redirectTo: 'by-capital'
-  }
+    redirectTo: 'by-first-letter',
+  },
 ];
 
-
-
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [
-    RouterModule
-  ],
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
   providers: [],
 })
-export class CountriesRoutingModule { }
+export class CocktailsRoutingModule {}

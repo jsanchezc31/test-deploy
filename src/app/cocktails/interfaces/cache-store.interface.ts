@@ -1,11 +1,11 @@
-import { Country } from "./cocktail.interface";
+import { Cocktail } from "./cocktail.interface";
 
 export interface CacheStore {
-  byCapital: TermCountries;
-  byCountries: TermCountries;
+  byCocktailName: TermCocktails;
+  byFirstLleter: TermCocktails;
 }
 
-export interface TermCountries {
+export interface TermCocktails {
   term: string;
-  countries: Country[];
+  cocktail: Cocktail[];
 }

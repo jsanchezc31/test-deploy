@@ -1,0 +1,20 @@
+<p-dialog
+  header="Ingredientes"
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '30vw' }"
+  [closable]="true"
+  (onHide)="closeModal()"
+>
+  <ul>
+    <li *ngFor="let item of ingredients" style="margin-bottom: 1rem">
+      <img
+        [src]="getIngredientImage(item.ingredient)"
+        [alt]="item.ingredient"
+        style="max-width: 50px; margin-right: 8px"
+      />
+      <strong>{{ item.ingredient }}</strong>
+      <span *ngIf="item.measure"> - {{ item.measure }} </span>
+    </li>
+  </ul>
+</p-dialog>

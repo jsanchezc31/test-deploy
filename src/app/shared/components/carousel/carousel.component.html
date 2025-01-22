@@ -1,0 +1,20 @@
+<!-- src/app/shared/components/related-cocktails-carousel/related-cocktails-carousel.component.html -->
+
+<p-carousel
+  [value]="cocktails"
+  [numVisible]="4"
+  [numScroll]="3"
+  [responsiveOptions]="responsiveOptions"
+  [circular]="true"
+  [autoplayInterval]="3000"
+  [showIndicators]="true"
+>
+  <ng-template pTemplate="item" let-cocktail>
+    <div class="cocktail-item">
+      <a [routerLink]="['/cocktails/by', cocktail.idDrink]">
+        <img [src]="cocktail.strDrinkThumb" [alt]="cocktail.strDrink" />
+        {{ cocktail.strDrink }}</a
+      >
+    </div>
+  </ng-template>
+</p-carousel>

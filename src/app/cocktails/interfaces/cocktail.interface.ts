@@ -1,117 +1,66 @@
-export interface Country {
-  name:         Name;
-  tld:          string[];
-  cca2:         string;
-  ccn3:         string;
-  cca3:         string;
-  cioc:         string;
-  independent:  boolean;
-  status:       string;
-  unMember:     boolean;
-  currencies:   Currencies;
-  idd:          Idd;
-  capital:      string[];
-  altSpellings: string[];
-  region:       string;
-  subregion:    string;
-  languages:    Languages;
-  translations: { [key: string]: Translation };
-  latlng:       number[];
-  landlocked:   boolean;
-  borders:      string[];
-  area:         number;
-  demonyms:     Demonyms;
-  flag:         string;
-  maps:         Maps;
-  population:   number;
-  gini:         { [key: string]: number };
-  fifa:         string;
-  car:          Car;
-  timezones:    string[];
-  continents:   string[];
-  flags:        Flags;
-  coatOfArms:   CoatOfArms;
-  startOfWeek:  string;
-  capitalInfo:  CapitalInfo;
-  postalCode?:  PostalCode;
+export interface CocktailResponse {
+  drinks: Cocktail[]; // Aquí `drinks` es un array de objetos tipo `Cocktail`.
 }
 
-export interface CapitalInfo {
-  latlng: number[];
+export interface Cocktail {
+  idDrink: string;
+  strDrink: string;
+  strDrinkAlternate: any;
+  strTags?: string;
+  strVideo: any;
+  strCategory: string;
+  strIBA?: string;
+  strAlcoholic: string;
+  strGlass: string;
+  strInstructions: string;
+  strInstructionsES?: string;
+  strInstructionsDE?: string;
+  strInstructionsFR?: string;
+  strInstructionsIT: string;
+  'strInstructionsZH-HANS': any;
+  'strInstructionsZH-HANT': any;
+  strDrinkThumb: string;
+  strIngredient1: string;
+  strIngredient2: string;
+  strIngredient3: string;
+  strIngredient4?: string;
+  strIngredient5?: string;
+  strIngredient6?: string;
+  strIngredient7?: string;
+  strIngredient8: any;
+  strIngredient9: any;
+  strIngredient10: any;
+  strIngredient11: any;
+  strIngredient12: any;
+  strIngredient13: any;
+  strIngredient14: any;
+  strIngredient15: any;
+  strMeasure1: string;
+  strMeasure2: string;
+  strMeasure3: string;
+  strMeasure4?: string;
+  strMeasure5?: string;
+  strMeasure6?: string;
+  strMeasure7?: string;
+  strMeasure8: any;
+  strMeasure9: any;
+  strMeasure10: any;
+  strMeasure11: any;
+  strMeasure12: any;
+  strMeasure13: any;
+  strMeasure14: any;
+  strMeasure15: any;
+  strImageSource?: string;
+  strImageAttribution?: string;
+  strCreativeCommonsConfirmed: string;
+  dateModified?: string;
 }
 
-export interface Car {
-  signs: string[];
-  side:  string;
-}
-
-export interface CoatOfArms {
-  png: string;
-  svg: string;
-}
-
-export interface Currencies {
-  USD?: EGP;
-  EGP?: EGP;
-  ILS?: EGP;
-  JOD?: EGP;
-}
-
-export interface EGP {
-  name:   string;
-  symbol: string;
-}
-
-export interface Demonyms {
-  eng: Eng;
-  fra: Eng;
-}
-
-export interface Eng {
-  f: string;
-  m: string;
-}
-
-export interface Flags {
-  png:  string;
-  svg:  string;
-  alt?: string;
-}
-
-export interface Idd {
-  root:     string;
-  suffixes: string[];
-}
-
-export interface Languages {
-  spa?: string;
-  ara?: string;
-  heb?: string;
-}
-
-export interface Maps {
-  googleMaps:     string;
-  openStreetMaps: string;
-}
-
-export interface Name {
-  common:     string;
-  official:   string;
-  nativeName: NativeName;
-}
-
-export interface NativeName {
-  spa?: Translation;
-  ara?: Translation;
-  heb?: Translation;
-}
-
-export interface Translation {
-  official: string;
-  common:   string;
-}
-
-export interface PostalCode {
-  format: string;
-  regex:  string;
+export interface Ingredient {
+  idIngredient: string;
+  strIngredient: string;
+  strDescription: string;
+  strType: string;
+  strAlcohol?: string;
+  strABV?: string;
 }
